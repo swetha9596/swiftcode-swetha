@@ -8,7 +8,7 @@ app.controller('chatController',function($scope, $sce){
         exampleSocket.send($scope.userMessage);
         $scope.userMessage = "";
     };
-    var  exampleSocket =  new  WebSocket("ws://localhost:9000/chatSocket");
+    var  exampleSocket =  new  WebSocket("wss://swiftcode-swe.herokuapp.com/chatSocket");
     exampleSocket.onmessage  =   function  (event) {        
         var jsonData = JSON.parse(event.data);  
         jsonData.time = new Date().toLocaleTimeString();        
